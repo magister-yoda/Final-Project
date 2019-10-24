@@ -6,7 +6,7 @@ module.exports = class GrassEater extends LiveForm
     constructor(x, y) {
         super(x,y); 
         this.multiply = 0;
-        this.life = 5;
+        this.life = 50;
     }
     getNewCoordinates() {
         this.directions = [
@@ -37,7 +37,7 @@ module.exports = class GrassEater extends LiveForm
             matrix[y][x] = 2;
             let grassEater = new GrassEater(x, y);
             grassEaterArr.push(grassEater);
-            this.life = 90;
+            this.life = 40;
         }
     }
     
@@ -60,7 +60,7 @@ module.exports = class GrassEater extends LiveForm
             }
             this.y = y;
             this.x = x;
-            if (this.life >= 85) {
+            if (this.life >= 45) {
                 this.mul();
             }
         } else {

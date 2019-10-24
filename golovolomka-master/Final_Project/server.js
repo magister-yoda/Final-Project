@@ -27,7 +27,7 @@ waterHashiv = 0;
 fishHashiv = 0;
 
 
-function matrixGenerator(matrixSize, grass, grassEater, hunter, predator, trade, water, fish) {
+function matrixGenerator(matrixSize, grass, grassEater,  predator,trade,hunter,  water, fish) {
     for (let i = 0; i < matrixSize; i++) {
         matrix[i] = [];
         for (let o = 0; o < matrixSize; o++) {
@@ -47,17 +47,17 @@ function matrixGenerator(matrixSize, grass, grassEater, hunter, predator, trade,
     for (let i = 0; i < predator; i++) {
         let customX = Math.floor(random(matrixSize));
         let customY = Math.floor(random(matrixSize));
-        matrix[customY][customX] = 4;
+        matrix[customY][customX] = 3;
     }
     for (let i = 0; i < hunter; i++) {
         let customX = Math.floor(random(matrixSize));
         let customY = Math.floor(random(matrixSize));
-        matrix[customY][customX] = 3;
+        matrix[customY][customX] = 5;
     }
     for (let i = 0; i < trade; i++) {
         let customX = Math.floor(random(matrixSize));
         let customY = Math.floor(random(matrixSize));
-        matrix[customY][customX] = 5;
+        matrix[customY][customX] = 4;
     }
     for (let i = 0; i < water; i++) {
         let customX = Math.floor(random(matrixSize));
@@ -95,17 +95,17 @@ function creatingObjects() {
                 grassArr.push(grass);
                 grassHashiv++;
             }
-            else if (matrix[y][x] == 3) {
+            else if (matrix[y][x] == 5) {
                 var hunter = new Hunter(x, y);
                 hunterArr.push(hunter);
                 hunterHashiv++;
             }
-            else if (matrix[y][x] == 4) {
+            else if (matrix[y][x] == 3) {
                 var predator = new Predator(x, y);
                 predatorArr.push(predator);
                 predatorHashiv++;
             }
-            else if (matrix[y][x] == 5) {
+            else if (matrix[y][x] == 4) {
                 var trade = new Trade(x, y);
                 tradeArr.push(trade);
                 tradeHashiv++;

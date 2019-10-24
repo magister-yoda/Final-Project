@@ -32,7 +32,7 @@ module.exports = class Trade extends LiveForm
         if (newCell) {
             let x = newCell[0];
             let y = newCell[1];
-            matrix[y][x] = 5;
+            matrix[y][x] = 4;
             let trade = new Trade(x, y);
             tradeArr.push(trade);
             this.energiya = 75;

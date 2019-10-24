@@ -60,7 +60,7 @@ module.exports = class Hunter extends LiveForm
             this.jizn++;
             let x = newCell[0];
             let y = newCell[1];
-            matrix[y][x] = 3;
+            matrix[y][x] = 5;
             matrix[this.y][this.x] = 0;
             for (let i in grassEaterArr) {
                 if (grassEaterArr[i].x == x && grassEaterArr[i].y == y) {

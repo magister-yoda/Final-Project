@@ -31,10 +31,10 @@ module.exports = class Predator extends LiveForm {
             predatorHashiv++
             let x = newCell[0];
             let y = newCell[1];
-            matrix[y][x] = 4;
+            matrix[y][x] = 3;
             let predator = new Predator(x, y);
             predatorArr.push(predator);
-            this.kyanq = 80;
+            this.kyanq = 40;
         }
     }
     eat() {
@@ -51,14 +51,9 @@ module.exports = class Predator extends LiveForm {
                     grassEaterArr.splice(i, 1)
                 }
             }
-            for (let i in grassArr) {
-                if (grassArr[i].x == x && grassArr[i].y == y) {
-                    grassArr.splice(i, 1)
-                }
-            }
             this.y = y;
             this.x = x;
-            if (this.kyanq >= 75) {
+            if (this.kyanq >= 35) {
                 this.mul();
             }
         } else {
@@ -82,9 +77,9 @@ module.exports = class Predator extends LiveForm {
                     hunterArr.splice(i, 1)
                 }
             }
-            for (let i in grassArr) {
-                if (grassArr[i].x == x && grassArr[i].y == y) {
-                    grassArr.splice(i, 1)
+            for (let i in grassEaterArr) {
+                if (grassEaterArr[i].x == x && grassEaterArr[i].y == y) {
+                    grassEaterArr.splice(i, 1)
                 }
             }
             this.y = y;
